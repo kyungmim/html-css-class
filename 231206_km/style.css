@@ -13,11 +13,11 @@ body{
 	background-image: url(./images/background.png);
 }
 .main-box{
-	background-image: url(./images/cover.png);
 	width: 800px;
+	background-image: url(./images/cover.png);
 	border-radius: 30px;
 	margin: 50px auto;
-
+	background: #dfdfdf;
 }
 .header {
 	background-size: cover;
