@@ -7,32 +7,35 @@
 	font-size: inherit;
 	box-sizing: border-box;
 	font-family: 'Montserrat', sans-serif;
+	list-style: none;
+	font-size: 100%;
+	font: inherit;
 }
 
 body{
 	background-image: url(./images/background.png);
 }
-.main-box{
+.wrapper{
 	width: 800px;
-	background-image: url(./images/cover.png);
-	border-radius: 30px;
-	margin: 50px auto;
-	background: #dfdfdf;
+	margin: 40px auto;
 }
 .header {
+	background-image: url(./images/cover.png);
+	background-repeat: no-repeat;
 	background-size: cover;
-	padding: 60px 0;
+	padding: 50px 0;
 	text-align: center;
 	color: white;
 }
-.main-box .profile {
+.header .profile {
 	border-radius: 100% / 30%;
 	border: 5px solid rgb(113, 152, 55);
 }
 .header h1{
 	font-size: 40px;
+	font-weight: bold;
 	margin: 20px 0;
-	letter-spacing: 20px;
+	letter-spacing: 10px;
 }
 .header p{
 	border-top: 3px solid white;
@@ -40,6 +43,55 @@ body{
 	width: fit-content;
 	padding-top: 10px;
 	letter-spacing: 0.4em;
+}
+.contents{
+	background-color: rgb(133, 174, 146);
+	padding:20px;
+}
+.section {
+	background-color: #fff;
+	padding: 30px;
+	background-image:url(./images/icon-information.png);
+	background-repeat: no-repeat;
+	background-position: right 30px center;
+}
+.section h2{
+	font-size: 26px;
+	margin-bottom: 10px;
+	font-weight: 600;
+	color: darkgreen;
+}
+.section ul{
+	color: rgb(73, 83, 75);
+	padding-left: 10px;
+	transition: all .3s;
+	border-left: 3px solid  rgb(73, 83, 75);
+}
+.section ul li {
+	line-height: 25px;
+	font-weight: 400;
+	font-size: 15px;
+	transition: all .2s;
+
+}
+.section ul:hover {
+	border-left: 3px solid #ebbc92;
+}
+.section ul li:hover {
+	color: #ebbc92;
+	font-size: 17px;
+	font-weight: 600;
+	text-shadow: 0 0 1px #f1f1ff;
+}
+.skills {
+	background-image:url(./images/icon-skills.png);
+	margin-top: 20px;
+}
+.footer{
+	background-color: #ccc;
+	color: #888;
+	text-align: center;
+	letter-spacing: 20px;
 }
 
 
