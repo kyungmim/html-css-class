@@ -31,27 +31,24 @@ body {
 	border-radius: 50%;
 	line-height: 200px;
 	font-weight: bold;
+	position: absolute;
+	background-repeat: no-repeat ;
 }
 .wrapper a.anger {
 	color: red;
 	background-position: 0 800px;
-	background-repeat: no-repeat ;
-	position: absolute;
 	top: 0;
 	left: 0;
-
 }
 .wrapper a.anger:hover {
 	background-image: url(./images/anger.png);
 	box-shadow: 0 0 20px 0 red;
 	background-position: 20px 45px;
-	line-height: 60px;
+	line-height: 80px;
 }
 .wrapper a.joy {
 	color: rgb(232, 221, 0);
 	background-position: 0 -800px;
-	background-repeat: no-repeat ;
-	position: absolute;
 	top: 0;
 	left: 280px;
 }
@@ -64,8 +61,6 @@ body {
 .wrapper a.sadness {
 	color: blue;
 	background-position: 0 800px;
-	background-repeat: no-repeat ;
-	position: absolute;
 	top: 0;
 	left: 560px;
 }
