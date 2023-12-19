@@ -49,16 +49,18 @@ body {
 .contents .contents-inner {
     flex-basis: 300px;
     min-width: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.30);
+
 }
 .content-type {
     display: flex;
     flex-direction: column;
-    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.30);
     border-radius: 12px;
 }
 .content-type .content-type-cover {
     height: 200px;
-    border-radius: 12px 12px 0 0;
     background-image: url(./images/food01.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -98,7 +100,6 @@ body {
 .content-type .blod_text.blue { color: #0075FF;}
 
 .content-type .content-type-hashtag {
-    border-radius: 0 0 12px 12px;
     display: flex;
     align-items: center;
     gap: 5px;
@@ -114,12 +115,8 @@ body {
     padding: 2px 8px;
     border-radius: 48px;
 }
-.content-type .content-type-hashtag.green p {
-    background: #17A651;
-}
-.content-type .content-type-hashtag.blue p {
-    background: #0075FF;
-}
+.content-type .content-type-hashtag.green p { background: #17A651;}
+.content-type .content-type-hashtag.blue p { background: #0075FF;}
 
 /* footer */
 .footer {
@@ -143,6 +140,6 @@ body {
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        min-width: 330px;        
+        min-width: 330px;     
     }
 }
