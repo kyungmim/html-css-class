@@ -1,0 +1,72 @@
+:root {
+	font-family: 'arial';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    clear: both;
+    color: inherit;
+    text-decoration: none;
+	box-sizing: border-box;
+}
+body {
+	background-color: #333;
+}
+
+.wrapper {
+	width: 850px;
+	margin: 50px auto;
+	position: relative;
+}
+.wrapper a {
+	transition: all .3s;
+	margin: 0 15px;
+	display: inline-block;
+	background-color: #f1f1f1;
+	text-align: center;
+	width: 230px;
+	height: 230px;
+	border-radius: 50%;
+	line-height: 200px;
+	font-weight: bold;
+	position: absolute;
+	background-repeat: no-repeat ;
+}
+.wrapper a.anger {
+	color: red;
+	background-position: 0 800px;
+	top: 0;
+	left: 0;
+}
+.wrapper a.anger:hover {
+	background-image: url(./images/anger.png);
+	box-shadow: 0 0 20px 0 red;
+	background-position: 20px 45px;
+	line-height: 80px;
+}
+.wrapper a.joy {
+	color: rgb(232, 221, 0);
+	background-position: 0 -800px;
+	top: 0;
+	left: 280px;
+}
+.wrapper a.joy:hover {
+	background-image: url(./images/joy.png);
+	box-shadow: 0 0 20px 0 yellow;
+	background-position: 15px -5px;
+	line-height: 390px;
+}
+.wrapper a.sadness {
+	color: blue;
+	background-position: 0 800px;
+	top: 0;
+	left: 560px;
+}
+.wrapper a.sadness:hover {
+	background-image: url(./images/sadness.png);
+	box-shadow: 0 0 20px 0 blue;
+	background-position: 15px 50px;
+	line-height: 80px;
+}

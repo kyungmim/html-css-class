@@ -1,0 +1,41 @@
+body {
+    margin: unset;
+}
+img {
+    vertical-align: top;
+}
+h1, p {
+    font-size: unset;
+    font-weight: unset;
+    margin: unset;
+}
+* {
+    font-family: 'arial';
+    line-height: 1.4;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+.animal {
+    width: 300px;
+    margin: 57px auto;
+}
+.animal-description {
+    background-color: #9C6035;
+    color: #E8BC9C;
+    background-image: url(./images/green.png);
+    background-repeat: no-repeat;
+    padding: 60px 20px 20px 20px;
+    min-height: 220px;
+    border-radius: 0 0 30px 30px;
+    border-bottom: 10px solid #46260E;
+}
+.animal-description h1 {
+    color: white;
+    font-weight: 700;
+    font-size: 36px;
+    margin-bottom: 12px;
+}

@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap');
+* {
+    margin: unset;
+    padding: unset;
+     box-sizing: border-box;
+     color: inherit;
+     font-family: 'Montserrat', sans-serif;
+     list-style-type: none;
+}
+body {
+    background-color: #fafafa;
+}
+.cover_wrapper {
+    background-image: url(./images/insideout-bg.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    height: 400px;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 50px;
+ }
+ .cover_wrapper h1 {
+    font-size: 130px;
+    background-color: red;
+    padding: 10px 80px;
+    font-weight: 900;
+    border-radius: 10px;
+}
+.contents_wrapper {
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 #ddd;
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 1000px;
+    margin-bottom: 30px;
+}
+.contents {
+    display: flex;
+    text-align: right;
+    justify-content: flex-start;
+    align-items: end;
+}
+.joy .contents{
+    align-items: start;
+}
+
+.sad .contents {
+    flex-direction: row-reverse;
+    text-align: left;
+    justify-content: flex-end;
+}
+.contents .content_img {
+    width: 250px;
+}
+.contents .content_text {
+    display: flex;
+    margin: 50px;
+    gap:20px;
+    flex-direction: column;
+}
+.contents h2 {
+    color: orange;
+    font-size: 28px;
+}
+.sad .contents h2 {
+    color: royalblue;
+}
+.anger .contents h2 {
+    color: red;
+}
+.contents h2::after {
+    content: '';
+    background-color: lightcoral;
+    display: block;
+    width: 60px;
+    height: 8px;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-top: 5px;
+}
+.sad .contents h2::after  {
+    content: '';
+    background-color: skyblue;
+    display: block;
+    width: 150px;
+    height: 8px;
+    border-radius: 20px;
+    margin-right: auto;
+    margin-left: 0;
+    margin-top: 5px;
+}
+.anger .contents h2::after  {
+    content: '';
+    background-color: orange;
+    display: block;
+    width: 100px;
+    height: 8px;
+    border-radius: 20px;
+    margin-top: 5px;
+}
+.contents .content_text .content-p {
+    display: flex;
+    gap:40px;
+    font-size: 13px;
+}
+.contents .content_text .content-p p{
+    width: 300px;
+    line-height: 1.8;
+    color: #999;
+    
+}
