@@ -1,0 +1,222 @@
+:root {
+    --color-primary-light: powderblue;
+    --color-primary :rgb(61, 170, 185);
+}
+
+
+img {
+    max-width: 100%;
+}
+
+/* css keyframes */
+@keyframes wing-left {
+    0%{transform: rotate(0)}
+    25%{transform: rotate(560deg)}
+    50%{transform: rotate(600deg)}
+    75%{transform: rotate(0)}
+    100%{transform: rotate(630deg)}
+}
+@keyframes wing-right {
+    0%{transform: rotate(0)}
+    25%{transform: rotate(-560deg)}
+    50%{transform: rotate(-600deg)}
+    75%{transform: rotate(0)}
+    100%{transform: rotate(-630deg)}
+}
+
+@keyframes move{
+    0%{left: 0;}
+    25%{left: 70%; top: 0;}
+    50%{left: 70%; top: 70%}
+    75%{left: 0;top: 70%}
+    100%{left: 0;top: 0;}
+}
+
+body {
+    background-color: #222;
+}
+
+.monster {
+    position: fixed;
+
+    animation-name: move;
+    animation-duration: 3s;
+    animation-iteration-count:infinite;
+    animation-fill-mode: forwards ;
+    
+}
+
+.monster-head {
+    background-color: var(--color-primary-light);
+    width: 110px;
+    height: 120px;
+    border-radius: 50px;
+    margin: 0 auto;
+    margin-bottom:-40px ;
+    transform: translateY(10px);
+}
+
+.monster-body {
+    background-color: var(--color-primary);
+    width: 200px;
+    height: 160px;
+    border-radius: 40px 40px 60px 60px;
+    position: relative;
+    z-index: -1;
+}
+.monster-body::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 60px auto;
+    width: 80px;
+    height:80px;
+    background-color: aliceblue;
+    border-radius: 30px 30px 40px 40px;
+}
+
+
+.bbuls {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 -26px;
+}
+
+.bbuls-item {
+    width: 30px;
+    height: 50px;
+    background-color: rgb(59, 111, 255);
+    border-radius: 0 0 4px 20px;
+    background-image: linear-gradient(
+        90deg, /* 그라디언트 각도 */
+        rgb(59, 111, 255) 50%,   /* 첫 번째 색상 시작 및 끝 */
+        rgb( 0 0 0 / .2 ) 50%,  /* 두 번째 색상 시작 및 끝 */
+        rgb(145, 222, 255) 50%,   /* 첫 번째 색상 시작 및 끝 */
+        rgb( 0 0 0 / .2 ) 50%   /* 두 번째 색상 시작 및 끝 */
+    );
+    background-size: 10px 10px; /* 줄무늬 크기 */
+
+    background-size: 10px 10px;
+}
+
+.bbuls-item::before {
+    content:'';
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color:#222 ;
+    border-radius:0 0 0 20px;
+}
+
+.bbuls-item.type-right {
+    transform: rotateY(180deg);
+}
+
+.eyes {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    margin-top: -14px;
+}
+
+.eye {
+    background-color: rgb(68, 124, 254);
+    width: 35px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 7px aliceblue;
+    position: relative;
+}
+
+.eye::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 15px;
+    margin: 0 auto;
+    height: 10px;
+    width: 8px;
+    background-color: rgb(255, 216, 60);
+    border-radius: 50%;
+}
+
+.nose {
+    width: 30px;
+    height: 12px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    gap: 10px;
+}
+
+.nose::before,
+.nose::after {
+    content: ' ';
+    border-radius: 50%;
+    width: 3px;
+    height: 3px;
+    background-color: #39609d;
+    margin-bottom: 5px;
+}
+.mouth {
+    width: 30px;
+    margin: 0 auto;
+}
+
+.wing {
+    position: absolute;
+    top: 0;
+    margin-top: 20px;
+    width: 50px;
+    height: 200px;
+    background-color:rgb(44, 121, 132);
+    border-bottom:10px solid  rgb(255, 216, 60);
+}
+
+
+.wing.type-left{
+    left: 0;
+    border-radius:0 50px 0 50px ;
+    transform-origin: left top; 
+    
+    animation-name: wing-left;
+    animation-duration: 3s;
+    animation-iteration-count:infinite;
+    animation-fill-mode: forwards ;
+}
+    
+.wing.type-right{
+    right: 0;
+    border-radius:50px 0 50px 0;
+    transform-origin: right top; 
+
+    animation-name: wing-right;
+    animation-duration: 3s;
+    animation-iteration-count:infinite;
+    animation-fill-mode: forwards ;
+}
+
+.foot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    gap: 30px;
+}
+
+.foot::before,
+.foot::after {
+    content: ' ';
+    border-radius: 20px;
+    width: 30px;
+    height: 10px;
+    background-color: #39609d;
+    
+}
