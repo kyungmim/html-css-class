@@ -29,11 +29,8 @@ img {
     height: auto;
 }
 
+/* color */
 :root {
-    /* Typography */
-    font-family: 'Montserrat', sans-serif;
-    
-    /* color */
     --primary-color-1:#6230A2;
     --primary-color-1-1:#C89DFF;
     --primary-color-1-2:#FF4500;
@@ -47,6 +44,13 @@ img {
     --color-gray-50:#111;
 }
 
+/* Typography */
+:root {
+font-family: 'Montserrat', sans-serif;
+}
+/* 컬러 영역 폰트 영역 나눠서 만들어주는게 좋음 */
+
+
 /* Components */
 .l_wrapper {
     width:auto;
@@ -57,7 +61,7 @@ img {
 /* @@@ top area @@@ */
 
 .top_page {
-    height: 100%;
+    /* height: 100%; = 굳이 안넣어도 되는 속성 */
     padding: 30px 30px 100px 30px;
     background-color: var(--primary-color-1);
 }
@@ -67,12 +71,14 @@ img {
     display: flex;
     align-items: center;
 }
+/* b-header와 동일한 속성들. 합쳐서 코드 줄여보기 */
+
 
 .t-header-tit {
     color: var(--color-gray-10);
     font-size: 40px;
     font-weight: 500;
-    line-height: 44px;
+    line-height: 44px; /* line-height는 숫자로만 입력하는게 좋음 px제외*/
     width: 260px;
 }
 .t-header-tit .t-point-txt {
@@ -83,7 +89,7 @@ img {
 .t-header-tit .t-point-txt::after {
     content: "";
     background-color: var(--primary-color-1-2);
-    display: inline-block;
+    /* display: inline-block; = position absolute가 들어간경우 인라인 요소가 블럭으로 되어버리기때문에 굳이 바꿔주지않아도 됨. */
     width: 100%;
     height: 26px;
     position: absolute;
@@ -102,7 +108,8 @@ img {
 }
 .header-subtxt::before {
     content: "";
-    width: 300px;
+    flex-shrink: 0;/* flex박스에서 shrink를 주지않으면 사용가능한 영역을 뺏겨버리기 때문에 shrink 넣어주기*/
+    width: 90px;
     height: 1px;
     margin: 0 32px 0 22px;
     background-color: var(--primary-color-1-1);
@@ -127,14 +134,16 @@ img {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    /* 글씨가 늘어났을때 ...으로 표시하고 싶으면 white-space:nowrap 꼭 써주기*/
+    white-space: nowrap;
 }
 
 .cover-img {
     width: 100%;
-    height: 100%;
     object-fit: cover;
     position: absolute;
-    
+    inset: 0;
+    /* absolute 썻을 경우 위치값 꼭 적어주기. */
 }
 
 .cover-header-txt {
@@ -155,9 +164,13 @@ img {
 }
 
 .list-contents {
-    width: 100%;
+    flex-grow: 1;
+    min-width: 0; /*텍스트가 띄어쓰기 없이 길어질때 부모의 크기가 자식의 크기를 감당하지못하고 넘어가므로 제한 걸어주기.*/
     padding: 20px;
     background-color: var(--color-gray-10);
+    /* overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; */
 }
 
 .list-sub-header {
@@ -171,7 +184,8 @@ img {
     color: var(--color-gray-50);
     font-size: 14px;
     font-weight: 300;
-    line-height:2em;
+    line-height:2;
+    /* 라인하이트는 em 보다 그냥 숫자만 넣는게 좋음 */
 }
 .list-txt::before {
     content: "";
@@ -186,7 +200,6 @@ img {
 /* @@@ bottom area @@@ */
 
 .bottom_page {
-    height: 100%;
     padding: 30px 30px 100px 30px ;
     background-color: var(--primary-color-1-3);
 }
@@ -225,7 +238,7 @@ img {
     color: var(--color-gray-10);
     font-size: 16px;
     font-weight: 700;
-    line-height: 44px;
+    line-height: 44px; /*버튼의 높이가 지정되어있을경우는 line-height 를 px 단위로 고정시켜주는건 괜찮음*/
     background-color: var(--primary-color-1-2);
     padding: 0 14px;
     border-radius: 4px;
@@ -245,7 +258,8 @@ img {
 .card-contents {
     display: flex;
     flex-direction: column;
-    width: 340px;
+    width: 340px;   
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.10);
 }
 
 .card-header {
@@ -254,7 +268,10 @@ img {
 
 .card-cover {
     width: 100%;
-    object-fit: contain;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    /* contain을 넣었을경우 aspect-ratio로 비율을 유지해줘도 사진이 비율보다 작은 사이즈가 들어왔을경우 전체 너비 상관없이 크기 만큼 들어오기 때문에 
+    비율을 유지해주고싶을때 cover로 넣어주는게 좋음 */
 }
 
 .badge {
@@ -290,10 +307,15 @@ img {
 
 .card-disciption {
     color: var(--color-gray-40);
+    display: -webkit-box;
     font-size: 14px;
     font-weight: 300;
     line-height: 1.5em;
     min-height: 110px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
 }
 
 .card-footer {
@@ -320,12 +342,22 @@ img {
     margin-right: auto;
 }
 
+.member-list {
+    width:110px;
+    height: 30px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: right;
+}
+
 .member {
     width: 30px;
     height: 30px;
     border-radius: 50%;
     border: 2px solid #FFF;
     margin-left: -6px;
+    box-sizing: border-box;
 }
 
 @media (max-width:980px) {
@@ -353,6 +385,10 @@ img {
    
     .b-header {
         display: block;
+        text-align: center;
+    }
+    .b-header-tit {
+        margin-left: auto;
     }
     .b-header-button {
         display: inline-block;
@@ -362,5 +398,6 @@ img {
     }
     .card {
         align-items: center;
+        justify-content: center;
     }
 }
