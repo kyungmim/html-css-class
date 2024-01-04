@@ -73,7 +73,7 @@ body {
 	width: 60%;	
 	font-size: 35px;
 	animation-name: bg;
-    animation-duration: 1s;
+    animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -92,7 +92,7 @@ body {
 	width: 60%;	
 	font-size: 35px;
 	animation-name: bg;
-    animation-duration: 1s;
+    animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -110,8 +110,9 @@ body {
 	cursor: pointer;
 	width: 60%;	
 	font-size: 35px;
+
 	animation-name: bg;
-    animation-duration: 1s;
+    animation-duration: 0.9s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -126,6 +127,6 @@ body {
 
 @keyframes bg {
 	100% {
-		background-position: -200px ,200px
+		background-position: -200px, 200px
 	}
 }
