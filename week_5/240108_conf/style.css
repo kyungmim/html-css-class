@@ -54,6 +54,7 @@ button {
   border-radius: 20px;
   color: white;
   font-size: 10px;
+  cursor: pointer;
 }
 
 /* 아래의 모든 코드는 영역::코드로 사용 */
@@ -73,8 +74,11 @@ button {
 
 /* conponent */
 
-.l_wrapper{
+body {
   background-image: url(./images/background.png);
+}
+
+.l_wrapper{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,10 +90,11 @@ button {
 .container {
   display: flex;
   flex-grow: 1;
+  gap: 30px;
   width: 100%;
   height: 100%;
   max-width: 850px;
-  max-height: 400px;
+  max-height: 480px;
   padding: 20px;
   background-color: var(--color-primary);
   border-radius: 20px;
@@ -97,11 +102,14 @@ button {
 }
 
 .aside {
-  width: 200px;
+  width: 150px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
+}
+
+.aside-header {
+  margin-bottom: auto;
 }
 
 .aside-tit {
@@ -132,7 +140,7 @@ button {
 }
 
 .contents {
-  flex-grow: 2;
+  flex-grow: 1;
   flex-basis: 0;
   display: flex;
   flex-direction: column;
@@ -169,7 +177,6 @@ button {
 .contents-item-box {
   display: flex;
   flex-direction: column;
-  max-height: 400px;
   overflow-y: scroll;
 }
 
@@ -179,7 +186,7 @@ button {
   gap: 20px;
   border-radius: 10px;
   padding: 20px;
-  box-shadow: inset 0 0 30px 30px var(--color-primary-shadow);
+  box-shadow: inset 0 0 20px 20px var(--color-primary-shadow);
 }
 
 .contents-item:nth-child(even) {
@@ -203,6 +210,7 @@ button {
 .item-proflie-scr {
   display: block;
   width: 60px;
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.6);
   border-radius: 10px 50% 50% 10px;
 }
 
@@ -229,4 +237,53 @@ button {
   font-size: 18px;
   font-weight: 300;
   color: var(--color-green);
+}
+
+@media (max-width:810px) {
+  .l_wrapper{
+    height: auto;
+  }
+  
+  .container {
+    flex-direction: column;
+    max-height: unset;
+    height: auto;
+  }
+  
+  .aside {
+    flex-direction: row;
+    width: auto;
+  }
+
+  .aside-header {
+    margin-right: auto;
+  }
+
+  .contents-item-box {
+    overflow: unset;
+  }
+}
+
+@media (max-width:600px) {
+  .contents-item-box {
+    gap: 10px;
+  }
+  
+  .contents-item:nth-child(even) {
+    box-shadow: inset 0 0 20px 20px var(--color-primary-shadow);
+  }
+  
+  .item-time{
+    min-width: auto;
+    border-radius: 5px;
+    padding: 10px;
+    line-height: 1.5;
+    text-align: center;
+    white-space: pre-line;
+    background-color: var(--color-primary-shadow);
+  }
+
+  .item-proflie-scr {
+    display: none;
+  }
 }
