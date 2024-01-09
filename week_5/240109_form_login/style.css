@@ -1,0 +1,165 @@
+/* Reset */
+body {
+	margin: unset;
+}
+
+img {
+	max-width: 100%;
+	vertical-align: top;
+}
+
+fieldset,
+legend,
+button,
+label,
+input  {
+	all: unset;
+	display: block;
+}
+
+legend {
+	width: 100%;
+} 
+
+input {
+	inline-size: 100%;
+	padding: 0 12px;
+}
+
+/* common */
+.button {
+	width: 100%;
+	background-color:cornflowerblue;
+	color: white;
+	text-align: center;
+	padding: 10px;
+	box-sizing: border-box;
+	border-radius: 5px;
+}
+
+
+/* Typography */
+:root {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.cover {
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 480px;
+	display: none;
+}
+
+.cover-src {
+	height: 100%;
+	object-fit: cover;
+}
+
+.main {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 40px;
+	box-sizing: border-box;
+}
+
+.main-inside {
+	width: 480px;
+}
+
+.form-title {
+	color: #222;
+	font-size: 20px;
+	font-weight: 700;
+	border-bottom: 10px solid #eee;
+	padding-bottom: 5px;
+}
+
+.form-field {
+	margin: 20px 0;
+}
+
+.form-label {
+	font-size: 14px;
+	color: #888;
+}
+
+.form-input {
+	border: 4px solid #eee;
+	border-radius: 5px;
+	padding: 10px;
+	margin-top: 10px;
+}
+
+.or {
+	margin: 30px 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+
+.or::before,
+.or::after {
+	content: " ";
+	flex-grow: 1;
+	height: 1px;
+	background-color: #ccc;
+}
+
+
+.social-button {
+	display:block;
+	height: 40px;
+	line-height: 38px;
+	padding:0 10px;
+	border: 2px solid #eee;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.social-button + .social-button {
+	margin-top: 10px;
+}
+
+.social-button::before {
+	content: " ";
+	display: inline-block;
+	vertical-align: text-top;
+	width: 24px;
+	height: 24px;
+	background-size: 24px;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-right: 5px;
+}
+
+.social-button.type-goolge span {
+	color: orangered;
+}
+.social-button.type-facebook span {
+	color: cornflowerblue;
+}
+
+.social-button.type-goolge::before {
+	background-image: url(./images/google.svg);
+}
+.social-button.type-facebook::before {
+	background-image: url(./images/facebook.svg);
+}
+
+
+
+
+@media (min-width: 960px ) {
+	.cover {
+		display: block;
+	}
+
+	.cover + .main {
+		margin-left: 480px;
+	}
+}
