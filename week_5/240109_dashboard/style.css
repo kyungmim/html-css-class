@@ -13,7 +13,7 @@ ul,li {
 	list-style-type: none;
 }
 
-p {
+h1,h2,p {
 	margin: unset;
 	padding: unset;
 }
@@ -23,6 +23,14 @@ img {
 	max-width: 100%;
 }
 
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+button,hr {
+	all: unset;
+}
 
 .wrapper {
 	background-color: #70C994;
@@ -36,6 +44,7 @@ img {
 
 .app-menu {
 	display: flex;
+	flex-shrink: 0;/* 영역을 빼앗기지 않기위해 작성해주기 */
 	flex-direction: column;
 	row-gap: 10px;
 }
@@ -43,6 +52,7 @@ img {
 .app-menu-list {
 	width: 154px;
 	height: 154px;
+	flex-shrink: 0;
 	border-radius: 30px 0 0 30px;
 	display: flex;
 	flex-direction: column;
@@ -95,6 +105,88 @@ img {
 	background-color: #fff;
 	flex-grow: 1;
 	flex-basis: 0;
+	min-width: 0;
+	 /* 자식의 컨텐츠때문에 영향을 받지않기 위해, 틀 유지를 위해 꼭 같이 적어줘야함*/
 	height: 100%;
 	border-radius: 48px;
+
+	display: flex;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.line {
+	display: block;
+	width: 3px;
+	background-color: #eee;
+}
+
+.paper {
+	box-shadow: inset 0 0 10px violet;
+	flex-grow: 1;
+	flex-basis: 0;
+	min-width: 0;
+	padding: 20px;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.paper-header {
+	display: flex;
+	align-items: center;
+	min-height: 60px;
+}
+
+.paper-tit {
+	display: flex;
+	align-items: baseline;
+	gap: 10px;
+}
+
+.paper-tit h1 {
+	font-size: 28px;
+	color: #333
+}
+
+.paper-tit p {
+	color: #999;
+	font-weight: 400;
+}
+
+.paper-aside {
+	margin-left: auto;
+}
+
+.paper-main {
+	box-shadow: inset 0 0 10px cadetblue;
+	flex-grow: 1;
+	flex-basis: 0;
+	min-width: 0;
+}
+
+.paper-board {
+	display: flex;
+	flex-direction: column;
+}
+
+.paper-board-header {
+	display: flex;
+	align-items: center;
+}
+
+.paper-board-header h2 {
+	color: #000;
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.paper-board-main {
+	box-shadow: inset 0 0 10px saddlebrown;
+}
+
+.aside {
+	box-shadow: inset 0 0 10px rebeccapurple;
+	width: 480px;
+	flex-shrink: 0;
 }
