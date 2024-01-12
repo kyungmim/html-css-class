@@ -1,0 +1,297 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: unset;
+}
+
+h1, p {
+    margin: unset;
+    padding: 0;
+    font-size: unset;
+    font-weight: unset;
+}
+
+img {
+    vertical-align: top;
+    max-width: 100%;
+}
+
+button {
+    all: unset;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Typography */
+:root {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* common */
+.modal-open {
+    padding: 30px;
+    background-color: #6100FF;
+    color: #fff;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+/* 스크롤바 커스텀 시작 */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* 스크롤바 핸들 */
+::-webkit-scrollbar-thumb {
+	background-color: #999;
+}
+
+/* 스크롤바 배경 */
+::-webkit-scrollbar-track {
+	background-color: #f2f2f2;
+}
+
+
+
+.modal.is_active {
+    opacity: 1;
+    pointer-events: unset;/* = 마우스 액션 돌려 놓기 */
+}
+.popup.is_active {
+    opacity: 1;
+    pointer-events: unset;/* = 마우스 액션 돌려 놓기 */
+}
+
+/* 높이 고정*/
+
+.popup{
+    background-color:rgb(0 0 0 /.5);
+    position: fixed;
+    inset: 0;
+
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+
+    overflow: auto;
+    opacity: 0;
+    pointer-events: none;/* = 마우스 액션도 먹지 않게 하겠다. */
+}
+
+
+.popup-inside {
+    background-color: #fff ;
+    margin: auto;
+    max-width: 640px;
+    max-height: 600px;
+    height: 100%;
+    width: 100%;
+    padding: 12px;
+    border-radius: 24px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-header {
+    display: flex;
+    align-items: center;
+
+    border-radius: 14px 14px 0px 0px;
+    background: #ffbf8d;
+    padding: 12px;
+
+}
+
+.popup-header h1 {
+    color: #FF7710;
+    font-weight: 700;
+    margin-right: auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffd9bc;
+}
+
+.popup-contents {
+    padding: 20px 12px;
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.popup-contents p {
+    overflow: auto;
+    color: #6B6B6B;
+    font-weight: 300;
+    line-height: 1.7;
+}
+
+.footer-button {
+    display: block;
+    inline-size: 100%;
+    width: 100px;
+    height: 48px;
+    line-height: 48px;
+    margin: 0 auto;
+    border-radius: 8px;
+    background-color: #6100FF;
+    color: #fff;
+    text-align: center;
+}
+
+.popup-footer-bg {
+    border-radius: 0px 0px 14px 14px;
+    background: #EEE;
+    padding: 18px 0;
+}
+
+/* 컨텐츠 높이 만큼 */
+.modal{
+    background-color:rgb(0 0 0 /.5);
+    position: fixed;
+    inset: 0;
+
+    padding: 60px;
+    display: flex;
+
+    overflow: auto;
+    opacity: 0;
+    pointer-events: none;/* = 마우스 액션도 먹지 않게 하겠다. */
+}
+
+
+.modal-inside {
+    background-color: #fff ;
+    margin: auto;
+    max-width: 640px;
+    height: auto;
+    width: 100%;
+    padding: 12px;
+    border-radius: 24px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+
+    border-radius: 14px 14px 0px 0px;
+    background: #D1EBDA;
+    padding: 12px;
+}
+
+.modal-header h1 {
+    color: #009F6F;
+    font-weight: 700;
+    margin-right: auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #E7FFE5;
+}
+
+.modal-contents {
+    padding: 20px 12px;
+}
+
+.modal-contents p {
+    overflow: auto;
+    color: #6B6B6B;
+    font-weight: 300;
+    line-height: 1.7;
+}
+
+.footer-button {
+    display: block;
+    inline-size: 100%;
+    width: 100px;
+    height: 48px;
+    line-height: 48px;
+    margin: 0 auto;
+    border-radius: 8px;
+    background-color: #6100FF;
+    color: #fff;
+    text-align: center;
+}
+
+.modal-footer-bg {
+    border-radius: 0px 0px 14px 14px;
+    background: #EEE;
+    padding: 18px 0;
+}
+
+
+
+
+
+/* 화면 전체 스크롤바 */
+/* .modal {
+    background-color:rgb(0 0 0 /.5);
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    padding: 30px;
+    overflow: auto;
+}
+
+.modal-inside {
+    background-color: #fff ;
+    margin: auto;
+    max-width: 640px;
+    height: auto;
+    width: 100%;
+    padding: 12px;
+    border-radius: 24px;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+
+    border-radius: 14px 14px 0px 0px;
+    background: #D1EBDA;
+    padding: 12px;
+}
+
+.modal-header h1 {
+    color: #009F6F;
+    font-weight: 700;
+    margin-right: auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #E7FFE5;
+}
+
+.modal-contents {
+    padding: 20px 14px;
+}
+
+.modal-contents p {
+    color: #6B6B6B;
+    font-weight: 300;
+    line-height: 1.7;
+}
+
+.footer-button {
+    display: block;
+    inline-size: 100%;
+    width: 100px;
+    height: 48px;
+    line-height: 48px;
+    margin: 0 auto;
+    border-radius: 8px;
+    background-color: #6100FF;
+    color: #fff;
+    text-align: center;
+}
+
+.modal-footer-bg {
+    border-radius: 0px 0px 14px 14px;
+    background: #EEE;
+    padding: 18px 0;
+} */
